@@ -18,6 +18,7 @@
     --beetle-green: #547878;
     --topaz: #26c2ae;
     --regent-grey: #7f9d9f;
+    --whater-leaf: #9fe8df;
 }
 
 body{
@@ -97,6 +98,17 @@ main{
             padding-block: .6rem;
             font-weight: 700;
         }
+
+        button:hover{
+            background: var(--whater-leaf);
+            cursor: pointer;
+            transition: .4s;
+
+        }
+
+        .button-selected{
+        background: var(--topaz);
+        }
         input{
             width: 100%;
             background: var(--Squeeze);
@@ -156,5 +168,47 @@ main{
             border: none;
             padding-block: .9rem;
             border-radius: .5rem;
+        }
+    }
+
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        display: none;
+    }
+
+    @media(min-width: 920px) {
+
+        header{
+            margin-top: 5rem;
+        }
+        main{
+            display: flex;
+            gap: 4.8rem;
+            padding: 4.8rem;
+            border-radius: 2.5rem;
+            max-width: 92rem;
+            margin-inline: auto;
+        }
+    
+         section {
+            width: 100%;
+        }
+    
+        .info .tip div {
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+        .results{
+
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+          .amount strong,
+          .totaç strong{
+            font-size: 4.8rem;
+          }
         }
     }
