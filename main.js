@@ -1,21 +1,89 @@
 let bill = 0
-let tipPercent = 0
+let tipPercentage = 0
 let numberOfPeople = 0
 let buttonSelected = null
 
-function receiveBillValue(){
-    bill = document.querySelector("#bill").valueAsNumber
+function receiveBillValue() {
+    bill = document.querySelector("#bill").ValueAsNumber
 
-    console.log(bill)
+    calculateResult()
 }
 
-function receiveNumberOfPeopleValue(){
-    NumberOfPeople = document.querySelector("#people").ValueAsNumber
+console.log(bill)
+
+
+function receiveNumberOfPeopleValue() {
+    numberOfPeople = document.querySelector("#people").valueAsNumber
+
+    calculateResult()
 }
 
-function receiveTipPercentageValue(value){
-    tipPercentege = value/100
+console.log(numberOfPeople)
 
-        buttonSelected = document.querySelector('#button-${value}')
-        buttonSelected.classList.add("button-selected")
+function receiveTipPercentageValue(value) {
+    tipPercentage = value / 100
+
+    removeClassButtonSelected()
+
+    document.querySelector("#custom-tip").value = ""
+
+    buttonSelected = document.querySelector('#button-${value}')
+    buttonSelected.classList.add("button-selected")
+
+    calculateResult()
+}
+
+ function reciveNumberOfPeopleValue() {
+    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100
+
+
+ }
+
+
+function removeClassButtonSelected() {
+    if (buttonSelected !== null) {
+        buttonSelected.classList.remove("button-selected")
+        buttonSelected = null
+    }
+}
+
+function calculateResult() {
+    if (bill !== 0 && tipPercentage !== && numberOfPeople !== 0) {
+        let tipAmoutPerson = calculateTipAmoutPerson()
+        calculateTotalPerson(tipAmoutPerson)
+
+        
+    }
+}
+
+function calculateTipAmoutPerson() {
+    let tipAmoutStrong = document.querySelector(".amout strong")
+    let totalAmoutPerson = bill / tipPercentage + numberOfPeople
+    tipAmoutStrong.textContent = '$${totalAmoutPerson.toFixed(2)}'
+    return tipAmoutStrong
+}
+
+function calculateTotalPerson(tipAmoutPerson) {
+    let totalStrong = document.querySelector(".total strong")
+        let totalAmoutPerson = bill / numberOfPeople + tipAmoutPerson
+        totalStrong.textContent = '$${totalAmoutPerson.toFixed(2)}'
+
+}
+
+function reset()
+{
+    bill = 0
+    document.querySelector("#bill").value = ""
+
+    tipPercentage = 0
+    removeClassButtonSelected()
+    document.querySelector("#custom-tip").value = ""
+
+    numberOfPeople = 0
+    document.querySelector("#people").value = ""
+
+    document.querySelector("#.total strong").textContent = "0.00"
+    document.querySelector("#.amout strong").textContent = "0.00"
+
+
 }

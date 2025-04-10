@@ -1,97 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Space Mono", monospace;
 }
 
-:root{
-    font-size: 52.5%;
+:root {
+    font-size: 62.5%;
 
     --jagged-ice: #c5e4e7;
-    --white: #FFF;
-    --Greyish-turquoise: #5e7a7d;
-    --Squeeze: #f3f9fa;
-    --Sherpa-blue: #004748;
+    --white: #fff;
+    --greysh-turquoise: #5e7a7d;
+    --squeeze: #f3f9fa;
+    --sherpa-blue: #00474b;
     --beetle-green: #547878;
     --topaz: #26c2ae;
-    --regent-grey: #7f9d9f;
-    --whater-leaf: #9fe8df;
+    --regent-grey: #7d9d9f;
+    --water-leaf: #9fe8df;
 }
 
-body{
-
+body {
     font-size: 1.6rem;
     background: var(--jagged-ice);
 }
 
-header{
+header {
     padding-top: 5rem;
     padding-bottom: 4rem;
+
     display: flex;
     justify-content: center;
 }
 
-main{
+main {
     background: var(--white);
-    border-radius: 2.5rem 2.5rem 0 0 ;
+    border-radius: 2.5rem 2.5rem 0 0;
     padding: 3.2rem 2.4rem;
 }
-    
-.info{
+
+.info {
     padding-inline: .8rem;
 
     strong{
-        color: var(--Greyish-turquoise);
+        color: var(--greysh-turquoise);
         display: block;
-        margin-bottom:.6rem;
+        margin-bottom: .6rem;
+
+        div {
+            margin-bottom: 3.2rem;
+        }
     }
 
-    div{
-        margin-bottom: 3.2rem;
+    .input-box {
+        background: var(--squeeze);
+        padding: .6rem 1.8rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
 
+        input {
+            background: transparent;
+            border: none;
+            text-align: right;
+            width: 100%;
+            outline: none;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--sherpa-blue);
+        }
+        
+        input::placeholder {
+            color: var(--sherpa-blue);
+            opacity: 0.35;
+        }
     }
 
-.input-box{
-    background: var(--Squeeze);
-    padding: .6rem 1.8rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-
-
-    input{
-        background: transparent;
-        border: none;
-        text-align: right;
-        width: 100%;
-        outline: none;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--Sherpa-blue);
-    }
-    input::placeholder{
-        color: var(--Sherpa-blue);
-        opacity: 0.35;
-    }
-}
-
-    .input-box:has(input:focus){
+    .input-box:has(input:focus) {
         outline: 2px solid var(--topaz);
     }
 
-    .tip > div{
+    .tip > div {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.6rem;
         margin-top: 1rem;
-    }
-
-        button{
+        
+        Button {
             border: none;
-            background: var(--Sherpa-blue);
+            background: var(--sherpa-blue);
             color: var(--white);
             font-size: 2.4rem;
             border-radius: .5rem;
@@ -99,28 +97,29 @@ main{
             font-weight: 700;
         }
 
-        button:hover{
-            background: var(--whater-leaf);
+        button:hover {
+            background: var(--water-leaf);
             cursor: pointer;
-            transition: .4s;
-
+            transition: .3s;
         }
 
-        .button-selected{
-        background: var(--topaz);
+        .button-selected {
+            background: var(--topaz);
         }
-        input{
+
+       }
+        input {
             width: 100%;
-            background: var(--Squeeze);
+            background: var(--squeeze);
             font-size: 2.4rem;
             text-align: center;
             border: none;
             border-radius: .5rem;
             outline: none;
-            color: var(--Sherpa-blue);
             font-weight: 700;
-            
-            &::placeholder{
+            color: var(--sherpa-blue);
+
+            &::placeholder {
                 color: var(--beetle-green);
             }
 
@@ -130,85 +129,88 @@ main{
 
         }
     }
-    
 
-
-.results{
-    background: var(--Sherpa-blue);
+.results {
+    background: var(--sherpa-blue);
     border-radius: 1.5rem;
     padding: 4rem 2.4rem 2.4rem;
 
-    .amount,
-    .total{
+    .amout,
+    .total {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2.4rem;
-        p{
-            color: var(--white);
-            font-weight: 700;
 
-            span{
+        p {
+             color: var(--white);
+             font-weight: 700;
+
+             span {
                 color: var(--regent-grey);
                 font-size: 1.3rem;
-            }
+             }
         }
-        strong{
+
+        strong {
             color: var(--topaz);
             font-size: 3.2rem;
         }
     }
-        button{
-            width: 100%;
-            font-size: 2.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            background: var(--topaz);
-            color: var(--Sherpa-blue);
-            border: none;
-            padding-block: .9rem;
-            border-radius: .5rem;
-        }
+
+    button {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: var(--topaz);
+        color: var(--sherpa-blue);
+        border: none;
+        padding-block: .9rem;
+        border-radius: .5rem;
     }
 
-
-    input::-webkit-inner-spin-button,
-    input::-webkit-outer-spin-button {
-        display: none;
+    button:hover {
+        background: var(--water-leaf);
+        cursor: pointer;
+        transition: .3s;
     }
+}
 
-    @media(min-width: 920px) {
+input ::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}
 
-        header{
-            margin-top: 5rem;
-        }
-        main{
-            display: flex;
-            gap: 4.8rem;
-            padding: 4.8rem;
-            border-radius: 2.5rem;
-            max-width: 92rem;
-            margin-inline: auto;
-        }
+@media(min-width: 920px) {
     
-         section {
+    header {
+        margin-top: 5rem;
+    }  
+
+    main {
+        display: flex;
+        max-width: 92rem;
+        margin-inline: auto;
+        border-radius: 2.5rem;
+        padding: 4.8rem;
+        gap: 4.8rem;
+
+        section {
             width: 100%;
         }
-    
+
         .info .tip div {
-            grid-template-columns: 1fr 1fr 1fr;
-
+            grid-template-columns: repeat(3, 1fr);
         }
-        .results{
 
+        .results {
             padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
 
-          .amount strong,
-          .totaç strong{
-            font-size: 4.8rem;
-          }
+            .amout strong,
+            .total strong {
+                font-size: 4.8rem;
+            }
         }
     }
+}
