@@ -200,9 +200,8 @@ input::-webkit-outer-spin-button {
         section {
 
             width: 100%;
-            
-        }
 
+        }
         .info .tip div {
             grid-template-columns: repeat(3, 1fr);
         }
